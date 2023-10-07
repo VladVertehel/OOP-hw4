@@ -1,0 +1,39 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Task5"
+             x:Class="Task5.MainPage"
+             x:Name="mainPage" 
+             BackgroundColor="LightBlue">
+
+    <StackLayout>
+        <ListView x:Name="listView" ItemsSource="{Binding Good}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout Padding="10">
+                                <Label TextColor="Black" Text="{Binding Name}" FontAttributes="Bold" />
+                                <Label TextColor="Black" Text="{Binding Price, StringFormat='Price: {0}₴'}" />
+                                <Label TextColor="Black" Text="{Binding State, StringFormat='State: {0}'}" />
+                                <Label TextColor="Black" Text="{Binding Date, StringFormat='Date: {0}'}" />
+                                <Label TextColor="Black" Text="{Binding Description}" />
+                                <Label TextColor="Black" Text="{Binding Expiration, StringFormat='Expiration: {0}'}" />
+                                <Label TextColor="Black" Text="{Binding Quantity, StringFormat='Quantity: {0}'}" />
+                                <Label TextColor="Black" Text="{Binding Unit}" />
+                                <Label TextColor="Black" Text="{Binding Pages, StringFormat='Pages: {0}'}" />
+                                <Label TextColor="Black" Text="{Binding Publishing, StringFormat='Publishing: {0}'}" />
+                                <Label TextColor="Black" Text="{Binding Author, StringFormat='Author: {0}'}" />
+                                <Label TextColor="Black" Text="---------------------------------" />
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button Text="Add product" Clicked="Add_Clicked" />
+        <Button Text="Delete product" Clicked="Delete_Clicked" />
+    </StackLayout>
+
+
+</ContentPage>
